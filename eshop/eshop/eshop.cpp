@@ -24,7 +24,6 @@ Eshop::Eshop()
 		exit (1);
 	}
 
-
 	//reading while the file still has lines, till we find EOF
 	//we read from the file that we opened on the input file stream variable
 	//and we put the line until we fine the new line char to the variable line
@@ -55,11 +54,7 @@ Eshop::Eshop()
 
 			m_pitemsList.push_back( new Pen(itemName, priced, description, stocki, idi, color, tipd));
 
-			
-		
 		}
-
-		
 		else if (itemType == "Pencil")
 		{
 			getInputForItemMembers(&linestream, itemName, priced, description, stocki, idi);
@@ -93,42 +88,89 @@ Eshop::Eshop()
 			cout << endl << endl << "ERROR ERROR ERROR" << endl << "name: " << itemType << endl;
 		}
 	}
-	//accessing the list we created and printing each item we have added
-	//why ++it and not it++???????????
-	for (list<Item*>::iterator it = m_pitemsList.begin(); it != m_pitemsList.end(); ++it)
-	{
-		cout << (*it)->toString();
-		//einai se lista, akoma kai ean svhsoume ta stoixeia h lista paramenei??
-		delete(*it);
-	}
-	
-	//option for prof
-	//string filename;
-	//cout << "Give the name of the file for the initialization of items list: " << endl;
-	//cin >> filename;
 
-
-
-
-
+	printItemsList();
 }
 
 //mporei kai na mhn eiani void
 //na epistrefoun ena kwdiko astoxias???
-void Eshop::addItem(Item*)
+void Eshop::addItem()
 {
+	int itemType=0;
+	cout << "Type the number of the item you would ilke to add:" << endl
+		<< "1. Notebook" << endl
+		<< "2. Pencil" << endl
+		<< "3. Pen" << endl
+		<< "4. Paper" << endl
+		<< "Choice:	";
+	cin >> itemType;
 
+	switch (itemType)
+	{
+	case 1:
+		m_pitemsList.push_back(new Notebook());
+		break;
+	case 2:
+		m_pitemsList.push_back(new Pencil());
+		break;
+	case 3:
+		m_pitemsList.push_back(new Pen());
+		break;
+	case 4:
+		m_pitemsList.push_back(new Paper());
+		break;
+	default:
+		cout << endl << "**********ERROR INPUT************" << endl;
+	}
+	cout << endl <<"****" << "Added item: ****" << endl
+		<< (*(--m_pitemsList.end()))->toString() 
+		<< "********" << endl;
+
+	cout << "Fully updated List of items: " << endl;
+	printItemsList();
 }
-Item* Eshop::getItemById(int)
+
+Item* Eshop::getItemById(int id)
 {
+	for (list<Item*>::iterator it = m_pitemsList.begin(); it != m_pitemsList.end(); ++it)
+	{
+		if ((*it)->getId() == id)
+		{
+			return *it;
+		}
+	}
+	cout << "**********   Item with matching ID was not found!   ************" << endl;
 	return NULL;
 }
 
 //POIO ITEM APO POU?
 //ORISMATA???
-void Eshop::removeItem()
+void Eshop::removeItem(int id)
 {
+	int initialSize;
+	initialSize = static_cast <int> (m_pitemsList.size());
+	for (list<Item*>::iterator it = m_pitemsList.begin(); it != m_pitemsList.end(); ++it)
+	{
+		if ((*it)->getId() == id)
+		{
+			cout << "***********   Delted Item:   **************" << endl;
+			cout << (*it)->toString();
 
+			m_pitemsList.erase(it);
+			break;
+		}
+	}
+
+	if (initialSize == m_pitemsList.size())
+	{
+		cout << "Item with requested id was not found, "
+			<< "no change to the items List." << endl;
+	}
+	else
+	{		
+		cout << "************   Updated List:  *************" << endl;
+		printItemsList();
+	}
 }
 
 
@@ -150,7 +192,7 @@ void Eshop::showCategories(list <Item*>)
 //pws tha epilegetai h kathgoria???
 void Eshop::showProductsInCategory(list <Item*>)
 {
-
+	 
 }
 
 //poio proion???
@@ -182,4 +224,21 @@ void Eshop::getInputForItemMembers(istringstream* const linestream, string& name
 	getline(*linestream, tmpId, '|');
 	id = stoi(tmpId);
 
+}
+
+//giati h parametros ksypaei otan vazw const?????
+void Eshop::printItemsList() const
+{
+	//accessing the list we created and printing each item we have added
+	//why ++it and not it++???????????
+	//thewritika to .begin() fernei thn prwth thesh h' thn thesh prin thn prwth? OR
+	//einai gia na mhn ftasoume sthn end kai ktyphsei???
+
+	//PROSOXH THELEI CONST_ITERATOR koita 3 sxolio apo panw
+	for (list<Item*>::const_iterator it = m_pitemsList.begin(); it != m_pitemsList.end(); ++it)
+	{
+		cout << (*it)->toString();
+		//einai se lista, akoma kai ean svhsoume ta stoixeia h lista paramenei??
+		// delete(*it)
+	}
 }

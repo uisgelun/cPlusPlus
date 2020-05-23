@@ -16,7 +16,6 @@ Pencil::Pencil()
 	cout << "Input name of the pencil product: ";
 	cin.ignore();
 	getline(cin, name);
-	//cin >> name;
 	setName(name);
 
 	cout << "Input price of the pencil: ";
@@ -26,7 +25,6 @@ Pencil::Pencil()
 	cout << "Input description of the pencil: ";
 	cin.ignore();
 	getline(cin, description);
-	//cin >> description;
 	setDescription(description);
 
 	cout << "Input available stock: ";

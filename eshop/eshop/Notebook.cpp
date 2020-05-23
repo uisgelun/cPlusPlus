@@ -5,6 +5,11 @@
 //have to think about it
 
 //customizable default constructor
+//design choice for better visibility of the item being created
+//to print customised messages that include the type of the item that is being created
+//instead of having a construcotr from Item get generalized data
+//just printing the name of the item being created in the message
+//????maybe not??????
 
 Notebook::Notebook()
 {
@@ -16,7 +21,6 @@ Notebook::Notebook()
 	cout << "Input name of the notebook product: ";
 	cin.ignore();
 	getline(cin, name);
-	//cin >> name;
 	setName(name);
 
 	cout << "Input price of the notebook: ";
@@ -27,7 +31,6 @@ Notebook::Notebook()
 	cin.ignore();
 	getline(cin, description);
 	
-	//cin >> description;
 	setDescription(description);
 
 	cout << "Input available stock: ";

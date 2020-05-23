@@ -25,12 +25,14 @@ public:
 
 	//mporei kai na mhn eiani void
 	//na epistrefoun ena kwdiko astoxias???
-	void addItem(Item*);
+	void addItem();
+
 	Item* getItemById(int);
 
 	//POIO ITEM APO POU?
 	//ORISMATA???
-	void removeItem();
+	//we are removing items by id again
+	void removeItem(int);
 
 
 	void removeBuyer();
@@ -49,11 +51,14 @@ public:
 
 	//helper function to get members of Item
 	void getInputForItemMembers(istringstream* const, string&, double&, string&, int&, int&);
-	
+	void printItemsList() const;
+
+
 private:
 
 	string m_name;
 	Owner m_owner;
+
 	//xreiazetai Item pointers gia na mporoume na ylopoihsoume polymorphismo
 	//efoson to item einia abstract
 	list <Item*> m_pitemsList;
