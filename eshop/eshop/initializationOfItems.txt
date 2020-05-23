@@ -1,0 +1,16 @@
+Pen|Stabilo Boss Calli|2.34|Perfectly beatiful calligraphy pen|12|324|blue|0.5
+Pen|Pelikan Lux|1.75|Long tip luxury pen|52|334|red|0.3
+Pen|Bic|0.6|Average everyday pen|7|344|black|0.4
+Pen|Schwarzer Office|1.00|a little better than your averadge everyday pen|5|384|green|0.25
+Pencil|Eberhard Work|0.85|average everyday pencil|23|235|0.1|H
+Pencil|Faber Castell Office|0.95|Reliable office pencil|5|218|0.45|HB
+Pencil|Eberhard School|0.35|Suitable for chrildren|20|274|0.2|H
+Pencil|Faber Castell Draw|0.55|Drawing suitable pencil for intense lines|15|256|0.3|B
+Notebook|Skag School|0.5|50 sheet flexible notebook for children|50|169|1
+Notebook|Skag 4 Subjects University|2.5|For university students soft paper|12|165|5
+Notebook|Skag 2 Subjects University|1.2|For university students soft paper|191|162|2
+Notebook|Skag Hardcover|3.2|Hardcover suitable for diary|3|198|1
+Notebook|Skag Squared|0.79|50 sheet flexible notebook for kids|21|187|1
+Paper|Lightweight white printer paper|4.39|Environment friendly pack of white printer paper|40|487|1|300
+Paper|Luxury tinted Paper|11.20|Luxury pack of yellow tinted paper suitable for invitations|5|484|2|100
+Paper|Drawing Paper|5.99|Soft paper suitable for drawing and coloring|8|481|1|10

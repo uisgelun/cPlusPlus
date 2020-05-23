@@ -1,9 +1,8 @@
 #include "Notebook.h"
 
 //we COULD declare the members of the Item class as protected so we can access them directly from the derived classes
-	//without the need for extra set functions
-	//have to think about it
-// possible fork???
+//without the need for extra set functions
+//have to think about it
 
 //customizable default constructor
 
@@ -31,14 +30,13 @@ Notebook::Notebook()
 	//cin >> description;
 	setDescription(description);
 
-	cout << "Input ID of the product: ";
-	cin >> id;
-	setId(id);
-
 	cout << "Input available stock: ";
 	cin >> stock;
 	setStock(stock);
 
+	cout << "Input ID of the product: ";
+	cin >> id;
+	setId(id);
 
 	cout << "Input number of notebook sections: ";
 	cin >> m_sections;
@@ -46,8 +44,8 @@ Notebook::Notebook()
 
 
 //derived generator
-Notebook::Notebook(string name="", double price=0.0, string description="", int id=0, int stock=0, int sections=0)
-	:Item{ name, price, description, id, stock }
+Notebook::Notebook(string name, double price, string description, int stock, int id, int sections)
+	:Item{ name, price, description, stock, id }
 {
 	m_sections = sections;
 
@@ -57,6 +55,8 @@ Notebook::Notebook(string name="", double price=0.0, string description="", int 
 string Notebook::getDetails() const
 {
 	//adding variable values to a string using a stream
+	//ostringstream vs stringstream???
+	//one for output only and the other for input output????
 	ostringstream oss;
 	oss << "Number of sections: " << m_sections << endl;
 

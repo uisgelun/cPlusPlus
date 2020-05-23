@@ -8,10 +8,10 @@ using namespace std;
 class ItemOrdered
 {
 protected:
-    Item item;
-    int quantity;
+  //  Item item;
+   // int quantity;
 public:
-    ItemOrdered(Item item, int quantity);
+   // ItemOrdered(Item item, int quantity);
 };
 
 #endif

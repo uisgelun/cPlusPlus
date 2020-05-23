@@ -28,13 +28,13 @@ Pen::Pen()
 	//cin >> description;
 	setDescription(description);
 
-	cout << "Input ID of the product: ";
-	cin >> id;
-	setId(id);
-
 	cout << "Input available stock: ";
 	cin >> stock;
 	setStock(stock);
+
+	cout << "Input ID of the product: ";
+	cin >> id;
+	setId(id);
 
 	cout << "Input color of the pen: ";
 	cin >> m_color;
@@ -45,8 +45,8 @@ Pen::Pen()
 }
 
 //derived generator that uses the base class generator
-Pen::Pen(string name = "", double price = 0, string description = "", int id=0, int stock=0, string color="red", double tipSize=0.0)
-	:Item{ name, price, description, id, stock }
+Pen::Pen(string name, double price, string description, int stock, int id, string color, double tipSize)
+	:Item{ name, price, description, stock, id }
 {
 	m_color = color;
 	m_tipSize = tipSize;
@@ -54,9 +54,16 @@ Pen::Pen(string name = "", double price = 0, string description = "", int id=0, 
 
 string Pen::getDetails() const
 {
+	
 	ostringstream oss;
 	oss << "Color: " << m_color << endl
-		<< "Tip Size: " << m_tipSize << endl;
+		<< "Tip Size: "<< setprecision(2) << m_tipSize << "mm"<< endl;
 	
 	return oss.str();
+	
+
+	//den epeksergazetai swsta to double mesa sthn to_string
+	//setprecision(2);
+	//return ("\ncolour: " + m_color + "\nTip Size: " + to_string(m_tipSize) + "mm\n");
+
 }

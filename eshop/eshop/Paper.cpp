@@ -30,13 +30,14 @@ Paper::Paper()
 	//cin >> description;
 	setDescription(description);
 
+	cout << "Input available stock: ";
+	cin >> stock;
+	setStock(stock);
+
 	cout << "Input ID of the product: ";
 	cin >> id;
 	setId(id);
 
-	cout << "Input available stock: ";
-	cin >> stock;
-	setStock(stock);
 
 	cout << "Input weight: ";
 	cin >> m_weight;
@@ -45,8 +46,8 @@ Paper::Paper()
 	cin >> m_pages;
 }
 
-Paper::Paper(string name = "", double price = 0.0, string description = "", int id = 0, int stock = 0, int weight=0, int pages=0)
-	:Item{ name, price, description, id, stock }
+Paper::Paper(string name, double price, string description, int stock, int id, int weight, int pages)
+	:Item{ name, price, description, stock, id }
 {
 	m_weight = weight;
 	m_pages = pages;

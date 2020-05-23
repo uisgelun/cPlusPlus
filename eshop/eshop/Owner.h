@@ -1,6 +1,6 @@
 #ifndef OWNER_H
 #define OWNER_H
-#include "user.h"
+#include "User.h"
 
 class Owner : public User
 {

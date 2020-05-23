@@ -1,8 +1,9 @@
 #include "Item.h"
 
+/*
 Item::Item()
 {
-	/*
+	
 	cout << "Input name of the product: ";
 	cin >> m_name;
 
@@ -17,20 +18,20 @@ Item::Item()
 
 	cout << "Input stock: ";
 	cin >> m_stock;
-	*/
+	
 
-}
+}*/
 
 //generator
-Item::Item(string nameValue="", double priceValue=0.0, string descriptionValue="", int idValue=0, int stockValue=0)
+Item::Item(string name, double price, string description, int stock, int id)
 {
 	//need to be protected from incorrect input
 	//exceptions?????
-	m_name = nameValue;
-	m_price = priceValue;
-	m_description = descriptionValue;
-	m_id = idValue;
-	m_stock = stockValue;
+	m_name = name;
+	m_price = price;
+	m_description = description;
+	m_id = id;
+	m_stock = stock;
 }
 
 string Item::getBasicInfo() const
@@ -41,9 +42,9 @@ string Item::getBasicInfo() const
 	oss << m_name << endl
 		<< "Price: " << m_price << "$" << endl
 		<< "Description: " << m_description << endl
-		<< "Item ID: " << m_id << endl
-		<< "In stock: " << m_stock << " pcs" << endl;
-
+		<< "In stock: " << m_stock << " pcs" << endl
+		<< "Item ID: " << m_id << endl;
+		
 	return oss.str();
 }
 
@@ -103,7 +104,7 @@ string Item::toString() const
 	//is it really that simple?
 	//no override????
 	ostringstream oss;
-	oss << endl << getBasicInfo() << getDetails() << endl;
+	oss << getBasicInfo() << getDetails() <<"---------------------" << endl;
 	return oss.str();
 }
 

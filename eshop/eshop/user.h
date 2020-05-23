@@ -2,13 +2,24 @@
 #define USER_H
 
 #include <string>
+#include <iostream>
+
 using namespace std;
 
 class User
 {
-protected:
-    string name;
-    string email;
+public:
+    User();
+
+    void setName(string);
+    string getName() const;
+
+    void setEmail(string);
+    string getEmail() const;
+
+private:
+    string m_name;
+    string m_email;
 };
 
 #endif

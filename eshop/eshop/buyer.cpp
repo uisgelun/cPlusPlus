@@ -1,7 +1,4 @@
-#include "user.h"
-#include "buyer.h"
-#include <iostream>
-using namespace std;
+#include "Buyer.h"
 
 void Buyer::awardBonus(int extraBonus) {
 	Buyer::bonus += extraBonus;
@@ -14,6 +11,11 @@ void Buyer::setBuyerCategory() {
 		Buyer::buyerCategory = SILVER;
 	else //(bonus > 200)
 		Buyer::buyerCategory = GOLD;
+}
+
+Buyer::BuyerCategory Buyer::getBuyerCategory() const
+{
+	return buyerCategory;
 }
 
 //void Buyer::placeOrder(Item item, int quantity) {

@@ -29,13 +29,13 @@ Pencil::Pencil()
 	//cin >> description;
 	setDescription(description);
 
-	cout << "Input ID of the product: ";
-	cin >> id;
-	setId(id);
-
 	cout << "Input available stock: ";
 	cin >> stock;
 	setStock(stock);
+
+	cout << "Input ID of the product: ";
+	cin >> id;
+	setId(id);
 
 	cout << "Input tip size of the pencil: ";
 	cin >> m_tipSize;
@@ -47,8 +47,8 @@ Pencil::Pencil()
 
 
 //derived generator
-Pencil::Pencil(string name = "", double price = 0.0, string description = "", int id = 0, int stock = 0, double tipSize = 0.0, string type = "H")
-	:Item{ name, price, description, id, stock }
+Pencil::Pencil(string name, double price, string description, int stock, int id, double tipSize, string type)
+	:Item{ name, price, description, stock, id }
 {
 	m_tipSize = tipSize;
 	m_type = type;
