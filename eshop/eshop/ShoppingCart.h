@@ -2,6 +2,10 @@
 #define SHOPPINGCART_H
 #include "ItemOrdered.h"
 #include "Item.h"
+#include "Pen.h"
+#include "Pencil.h"
+#include "Paper.h"
+#include "Notebook.h"
 #include <string>
 #include <list> 
 #include "ItemOrdered.h"
@@ -13,7 +17,7 @@ protected:
     list <ItemOrdered> orderList;
 
 public:
-    void addItemOrdered(Item item, int quantity);
+    void addItemOrdered(Pen, int);
     void removeItemOrdered(ItemOrdered itemOrdered);
     void changeItemOrderedQuantity(ItemOrdered itemOrdered, int quantity);
     void showCart();
