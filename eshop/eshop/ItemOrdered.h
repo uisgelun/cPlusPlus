@@ -13,6 +13,10 @@ class ItemOrdered
 {
 private:
     Item * m_item;
+public:
+   // ItemOrdered(Item item, int quantity);
+
+    Item *m_item;
     int m_quantity;
 public:
     ItemOrdered(Item*, int);
@@ -20,6 +24,7 @@ public:
     ItemOrdered(Pencil, int);
     ItemOrdered(Notebook, int);
     ItemOrdered(Paper, int);
+
 };
 
 #endif

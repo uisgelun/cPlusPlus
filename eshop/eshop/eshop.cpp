@@ -1,4 +1,9 @@
 #include "Eshop.h"
+// eshop.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+#include "Item.h"
+#include "ItemOrdered.h"
+#include "ShoppingCart.h"
 
 
 
@@ -171,6 +176,16 @@ void Eshop::removeItem(int id)
 		cout << "************   Updated List:  *************" << endl;
 		printItemsList();
 	}
+    Pen pen1("Bic Pen", 1.2, "Your everyday pen for general use.", 745, 25, "Blue", 0.12);
+    ShoppingCart shoppingCart;
+    shoppingCart.addItemOrdered(pen1, 4);
+    /*cout << pen1.toString();
+    Item *i = &pen1;
+    ItemOrdered io(i, 4);
+    cout << i->getDetails();*/
+    //ItemOrdered itemOrdered(pen1, 4);
+
+
 }
 
 

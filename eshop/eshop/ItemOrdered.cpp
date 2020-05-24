@@ -5,7 +5,10 @@
 	//	this->item = item;
 	//	this->quantity = quantity;
 	//}
-	ItemOrdered::ItemOrdered(Item * item, int q) {
+	ItemOrdered::ItemOrdered(Item * item, int q) {}
+//}
+
+ItemOrdered::ItemOrdered(Item *item, int q) {
 	cout << "Inside itemOrdered";
 	//Item* i = &pen;
 	m_item = item;
@@ -14,7 +17,7 @@
 
 ItemOrdered::ItemOrdered(Pen pen, int q) {
 	cout << "Inside itemOrdered";
-	Item* i = &pen;
+	Item *i = &pen;
 	m_item = i;
 	m_quantity = q;
 }
