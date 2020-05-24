@@ -2,16 +2,24 @@
 #define ITEMORDERED_H
 
 #include "Item.h"
+#include "Pen.h"
+#include "Pencil.h"
+#include "Paper.h"
+#include "Notebook.h"
 #include <string>
 using namespace std;
 
 class ItemOrdered
 {
-protected:
-  //  Item item;
-   // int quantity;
+private:
+    Item * m_item;
+    int m_quantity;
 public:
-   // ItemOrdered(Item item, int quantity);
+    ItemOrdered(Item*, int);
+    ItemOrdered(Pen, int);
+    ItemOrdered(Pencil, int);
+    ItemOrdered(Notebook, int);
+    ItemOrdered(Paper, int);
 };
 
 #endif
